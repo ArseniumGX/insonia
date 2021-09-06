@@ -1,0 +1,20 @@
+@font-face {
+    font-family: PublicSans;
+    src: url("./assets/fonts/PublicSans-VariableFont_wght.ttf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: 0;
+    color: #fffcf2;
+    font-family: PublicSans;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #252422;
+}
