@@ -4,10 +4,8 @@ import './App.css'
 import Footer from './components/Footer'
 import Underconstruction from './pages/Underconstruction'
 
-// Mesma coisa que acima usando arrow function
-export default (() => 
+export default () => (
     <BrowserRouter>
         <Underconstruction />
-        <Footer />
     </BrowserRouter>
 )
