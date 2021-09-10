@@ -1,6 +1,6 @@
 import {} from 'react'
-import './Underconstruction.scss'
-import image from '../assets/images/underconstruction.png'
+import './style.scss'
+import image from '../../assets/images/underconstruction.png'
 
 export default function(){
     return(

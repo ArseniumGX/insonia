@@ -6,7 +6,7 @@
 *{
     margin: 0;
     padding: 0;
-    text-decoration: 0;
+    box-sizing: border-box;
     color: #fffcf2;
     font-family: PublicSans;
 }
@@ -17,4 +17,6 @@ html{
 
 body{
     background-color: #252422;
+    min-width: 100vh;
+    min-height: 100vh;
 }
