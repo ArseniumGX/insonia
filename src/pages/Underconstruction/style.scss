@@ -1,28 +1,17 @@
 main{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    height: 100vh;
-}
-
-main h3{
-    font-size: 28px;
-    text-transform: capitalize;
-    letter-spacing: .5rem;
-    text-align: center;
-    align-self: center;
-    padding: 2rem;
-}
-
-main hr{
-    width: 50vw;
-    align-self: center;
-    border-color: #6320ee;
-    border-radius: 40%;
-}
-
-main img{
-    width: 32rem;
-    margin: 2rem;
-    align-self: center;
+    
+    hr{
+        width: 50vw;
+        align-self: center;
+        border-color: #6320ee;
+        border-radius: 40%;
+    }
+    
+    img{
+        width: 32rem;
+        margin: 2rem;
+        align-self: center;
+    }
 }
