@@ -1,5 +1,5 @@
 import {} from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import './App.scss'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -14,9 +14,6 @@ export default () => (
         
         <Switch>
             <Route exact path="/" component={Underconstruction} />
-            {/* <Route path="/add" component={Add} /> */}
-            {/* <Route path="/view/:id" component={View} /> */}
-
             <Route path="*" component={NotFound} />
         </Switch>
         <Footer />

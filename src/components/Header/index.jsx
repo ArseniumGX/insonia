@@ -18,10 +18,10 @@ export default function Header(){
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="/">Sobre</Link>
+                        <Link to="/sobre">Sobre</Link>
                     </li>
                     <li>
-                        <Link to="/">Adicionar</Link>
+                        <Link to="/add">Adicionar</Link>
                     </li>
                 </ul>
             </nav>
