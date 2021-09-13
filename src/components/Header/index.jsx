@@ -11,17 +11,16 @@ export default function Header(){
                 <img src={logo} alt="Logo projeto Insonia" />
                 <h1>Projeto Insonia</h1>
             </div>
-            <h2>Blue EdTech - Módulo 3 (Fullstack)</h2>
             <nav>
                 <ul>
                     <li>
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="/sobre">Sobre</Link>
+                        <Link to="/add">Add</Link>
                     </li>
                     <li>
-                        <Link to="/add">Adicionar</Link>
+                        <Link to="/sobre">Sobre</Link>
                     </li>
                 </ul>
             </nav>

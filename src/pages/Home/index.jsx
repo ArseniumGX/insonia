@@ -1,7 +1,12 @@
 import './style.scss'
+import  List from '../../components/List'
+
 
 export default function Home(){
     return(
-        <section className="listagem">teste</section>
+        <>
+        <h2>Lista de Tarefas</h2>
+        <List />
+        </>
     )
 }
