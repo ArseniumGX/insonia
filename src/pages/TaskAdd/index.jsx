@@ -1,24 +1,20 @@
-import { useState, useEffect } from 'react'
+import { useState, history } from 'react'
 import { Link } from 'react-router-dom'
 import './style.scss'
 import api from '../../service/api'
-import moment from 'moment'
 
-export default function(props){
-    const { id } = props.match.params
-    const [fields, setFields] = useState('')
-
-    useEffect(async() => {
-        const response = await api.getOne(id)
-        const result = await response.json()
-        setFields(result.data)
-    }, [])
+export default function Add(props){
 
     const handleSubmit = async(e) => {
         e.preventDefault()
 
-        const response = await api.update(fields, id)
-        props.history.push('/')
+        try{
+            const response = await api.create(fields)
+            props.history.push('/')
+        }
+        catch(err){
+            console.log(err)
+        }
     }
 
     const handleFields = e => {
@@ -27,10 +23,11 @@ export default function(props){
         setFields(auxField)
     }
 
+    const [fields, setFields] = useState({})
 
     return( 
-        <section className='edit'>
-            <h3>Editação de tarefa</h3>
+        <section className='add'>
+            <h3>Adicionar nova tarefa</h3>
             <form onSubmit={ handleSubmit }>
                 <div className="title">
                     <label htmlFor="title">Título</label>
@@ -48,15 +45,15 @@ export default function(props){
                         <div className="box-radio-content-items">
                             <div>
                                 <label htmlFor="low">Baixa</label>
-                                <input type="radio" name="priority" id="low" value="low" checked={ fields.priority === 'low' ? true : false } onChange={ handleFields } />
+                                <input type="radio" name="priority" id="low" value="baixa" onChange={ handleFields } />
                             </div>
                             <div>
                                 <label htmlFor="mid">Média</label>
-                                <input type="radio" name="priority" id="mid" value="mid" checked={ fields.priority === 'mid' ? true : false } onChange={ handleFields } />
+                                <input type="radio" name="priority" id="mid" value="media" onChange={ handleFields } />
                             </div>
                             <div>
                                 <label htmlFor="high">Alta</label>
-                                <input type="radio" name="priority" id="high" value="high" checked={ fields.priority === 'high' ? true : false } onChange={ handleFields } />
+                                <input type="radio" name="priority" id="high" value="alta" onChange={ handleFields } />
                             </div>
                         </div>
                     </div>
@@ -66,15 +63,15 @@ export default function(props){
                         <div className="box-radio-content-items">
                             <div>
                                 <label htmlFor="pending">Fazer</label>
-                                <input type="radio" name="status" id="pending" value="pending" checked={ fields.status === 'pending' ? true : false } onChange={ handleFields } />
+                                <input type="radio" name="status" id="pending" value="fazer" onChange={ handleFields } />
                             </div>
                             <div>
                                 <label htmlFor="making">Fazendo</label>
-                                <input type="radio" name="status" id="making" value="making" checked={ fields.status === 'making' ? true : false } onChange={ handleFields } />
+                                <input type="radio" name="status" id="making" value="fazendo" onChange={ handleFields } />
                             </div>
                             <div>
                                 <label htmlFor="done">Feito</label>
-                                <input type="radio" name="status" id="done" value="done" checked={ fields.status === 'done' ? true : false } onChange={ handleFields } />
+                                <input type="radio" name="status" id="done" value="feito" onChange={ handleFields } />
                             </div>
                         </div>
                     </div>
@@ -84,12 +81,11 @@ export default function(props){
 
                 <div className="deadline">
                     <label htmlFor="deadline">Prazo</label>
-                    { console.log(fields.deadline) }
-                    <input type="date" name="deadline" id="deadline" value={ moment(fields.deadline).format('YYYY-MM-DD') || '' } onChange={ handleFields } />
+                    <input type="date" name="deadline" id="deadline" value={ fields.deadline || '' } onChange={ handleFields } />
                 </div>
 
                 <div className="buttons">
-                    <button type="submit">Alterar</button>
+                    <button type="submit">Cadastrar</button>
                     <Link to="/">Cancelar</Link>
                 </div>
             </form>

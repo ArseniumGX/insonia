@@ -1,0 +1,62 @@
+section.view-task{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 25rem;
+    
+    h2{
+        color: #fffcf2;
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+        padding: 1rem;
+    }
+    
+    div.task-container{
+        box-shadow: .5rem .5rem .5rem #252422;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #ccc5b9;
+
+        h3{
+            letter-spacing: .2rem;
+            padding: 1rem;
+        }
+
+        p{
+            text-align: left;
+            width: 100%;
+            margin: .3rem 0;
+
+            &.description{
+                text-align: center;
+            }
+        }
+
+        div.task-buttons{
+            padding: 1rem;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            transition: .3s ease-in-out all;
+
+            a{
+                text-align: center;
+                background-color: #252422;
+                color: #fffcf2;
+                width: 5em;
+                padding: .5rem 0;
+                border-radius: 8px;
+                
+                &:hover{
+                    background-color: #643173;
+                    box-shadow:  0 0 .5rem #7d5ba6;
+                }
+            }
+        }
+    }
+}

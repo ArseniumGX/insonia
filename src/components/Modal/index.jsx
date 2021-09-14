@@ -10,10 +10,9 @@ export default props => {
         return null
     }
 
-    const handleBtnDelete = async(e) => {
-        // const response = await api.delete(id)
-        // const result = response.json()
-        e.target.onclick(() => props.onClose)
+    const handleBtnDelete = async() => {
+        await api.delete(id)
+        location.assign('/')
     }
 
     return(

@@ -1,12 +1,17 @@
 section.tasks{
-    background-color: #ccc5b9;
+    background-color: #ccc5b99d;
     display: flex;
     flex-direction: column;
     width: 28rem;
+    max-height: 100vh;
     min-height: 8rem;
     margin: 1rem auto;
     padding: 1rem;
     border-radius: 8px;
+    box-shadow: 1rem 1rem 1rem #333333;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    
 
     h2{
         text-align: center;

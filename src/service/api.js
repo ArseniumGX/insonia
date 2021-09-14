@@ -1,5 +1,5 @@
 export default {
-    baseURL: "http://localhost:3001/api/todo",
+    baseURL: "https://d7ffce5ee98e14b600a806eb38f389.herokuapp.com/",
 
     getAll: function(){
         return fetch(this.baseURL)

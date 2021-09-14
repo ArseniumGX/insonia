@@ -6,14 +6,14 @@ import './style.scss'
 import Card from '../Card/'
 import Api from '../../service/api'
 
-export default () => {
+export default props => {
 
     const [list, setList] = useState([])
 
     useEffect( async() => {
         const response = await Api.getAll()
         const results = await response.json()
-        setList(results.data)
+        setList(await results.data)
     }, [])
 
     return(
@@ -25,7 +25,7 @@ export default () => {
             </Link>
             <div className="list">
                 {list.map(item => (
-                    <Card item={ item } key={ item._id } />
+                    <Card item={ item } key={ item._id } history={ props.history } />
                 ))}
             </div>
         </section>

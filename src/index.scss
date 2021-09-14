@@ -7,16 +7,25 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #293132;
+    color: #0d0d0d;
     font-family: PublicSans;
 }
 
 html{
     scroll-behavior: smooth;
+    height: 100%
 }
 
 body{
-    background: linear-gradient(to top, #643173 0%, #333333 100%);
+    background: #7d5ba6 url('assets/images/background.png') fixed no-repeat;
+    background-position: bottom left;
+    background-size: contain;
+    background-blend-mode: luminosity;
     min-width: 600px;
-    min-height: 100vh;
+    height: 140%;
+}
+
+div#root{
+    min-height: 100%;
+    position: relative;
 }

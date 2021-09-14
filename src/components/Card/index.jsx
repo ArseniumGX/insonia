@@ -1,13 +1,12 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useState } from 'react'
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons'
 import './style.scss'
-import api from '../../service/api'
 import Modal from '../Modal'
 
 export default props => {
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState()
     const modalOpen = () => setOpen(true)
     const modalClose = () => setOpen(false)
 
