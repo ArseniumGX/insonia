@@ -1,0 +1,66 @@
+div.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #252422cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s ease-in-out all;
+    opacity: 2;
+
+    &-content{
+        width: 24rem;
+        height: 12rem;
+        background-color: #ccc5b9;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        h3{
+            font-size: 1.4rem;
+            letter-spacing: .2rem;
+            text-align: center;
+        }
+
+        hr{
+            width: 70%;
+            border: .1rem solid #643173;
+            align-self: stretch;
+            border-radius: 50%;
+            align-self: center;
+        }
+
+        p{
+            letter-spacing: .1rem;
+            align-self: center;
+            text-align: center;
+        }
+
+        div.buttons{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 12rem;
+
+            span{
+                cursor: pointer;
+                font-size: 1.6rem;
+
+                svg{
+                    transition: .3s ease-in-out all;
+                    &:hover{
+                        transform: scale(1.8);
+                    }
+                }
+            }
+        }
+
+
+    }
+}

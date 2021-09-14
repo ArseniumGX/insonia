@@ -1,7 +1,7 @@
 import './style.scss'
 import notFound from '../../assets/images/notFound.png'
 
-export default () => {
+export default function NotFound(){
     return(
         <section className="notFound">
             <h3>Opss... Página não encontrada!</h3>

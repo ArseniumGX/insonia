@@ -1,11 +1,26 @@
-import {} from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons'
 import './style.scss'
+import api from '../../service/api'
+import Modal from '../Modal'
 
 export default props => {
-    (
-        <div className="task-container">
-            <h3>{props.title}</h3>
+    const [open, setOpen] = useState(false)
+    const modalOpen = () => setOpen(true)
+    const modalClose = () => setOpen(false)
+
+    return(
+        <div className="task-container" title={ props.item.description }>
+            <Link to={`/view/${props.item._id}`}>{ props.item.title }</Link>
+            <div className="task-container-icons">
+                <Link to={`/edit/${props.item._id}`}><FontAwesomeIcon icon={ faEdit } /></Link>
+                <Link to="#" onClick={ modalOpen }>
+                    <FontAwesomeIcon icon={ faTrash } />
+                </Link>
+                <Modal show={ open } onClose={ modalClose } title={ props.item.title } taskID={ props.item._id } />
+            </div>
         </div>
     )
 }

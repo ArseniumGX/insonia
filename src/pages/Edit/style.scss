@@ -1,4 +1,4 @@
-section.add{
+section.edit{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,9 +38,8 @@ section.add{
             }
             
             input{
-                font-size: 1rem;
                 border: none;
-                border-bottom: .1rem solid #643173;
+                border-bottom: .1rem solid #333;
                 outline: none;
                 transition: .3s ease-in-out;
                 background-color: unset;
@@ -68,7 +67,7 @@ section.add{
             textarea{
                 padding: 1rem;
                 outline: none;
-                border: .1rem solid #643173;
+                border: .1rem solid #333333;
                 border-radius: 8px;
                 resize: none;
 
